@@ -22,7 +22,7 @@ function Send(){
         data: JSON.stringify(data),
        }).done(function(response){
             console.log(response)
-            txtOut.value = response.prediction
+            txtOut.value = response.prediction + " 일 확률: " + response.probability
 
        }).fail(function(response){
             alert("fail" + response)
