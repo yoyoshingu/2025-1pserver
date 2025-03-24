@@ -35,6 +35,6 @@ class IrisMachineLearning:
     def predict_species(self, sepal_length, sepal_width, petal_length, petal_width):
         X_new = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
         prediction = self.model_rfc.predict(X_new)
-        probability = self.model_rfc.predict_proba(X_new).max()
-        print(prediction)
+        probability = self.model_rfc.predict_proba(X_new)
+        print(probability)
         return prediction[0], probability

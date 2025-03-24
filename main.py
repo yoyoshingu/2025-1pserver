@@ -34,7 +34,7 @@ async def predict():
 async def predict_species(iris:IrisSpecies):
     pred, prob = model.predict_species(iris.sepal_length, iris.sepal_width, iris.petal_length, iris.petal_width)
 
-    return {"prediction":pred, "probability": prob}
+    return {"prediction":pred, "probability": prob.tolist()}
 
 if __name__ == '__main__':
     uvicorn.run(app, host='127.0.0.1', port=8000)
